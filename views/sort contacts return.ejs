@@ -1,0 +1,20 @@
+ 
+<%zero = []; %>
+<%nine = []; %>
+
+<%for(let x = 0; x < totalDigits-1; x++){ %>
+    <%   zero.push(0); %>
+    <%   nine.push(9); %>
+    <%} %>
+    <%numberMinimum = `${firstDigit}${zero.join('')}` %>
+    <%numberMaximum = `${firstDigit}${nine.join('')}` %>
+    <% stringMin = parseInt(numberMinimum) %> 
+    <% stringMax = parseInt(numberMaximum) %> 
+    <table>
+    <% numbers.forEach(x=>{%>
+        <%  if(x < stringMax && x > stringMin ){ %>
+        <tr>
+            <td><%= x%></td>
+        </tr>
+        <% }})%>
+    </table>
