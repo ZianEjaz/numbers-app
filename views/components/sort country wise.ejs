@@ -1,0 +1,22 @@
+<%- include ('header.ejs') %> 
+
+<%  numbers.forEach(x =>{  %>
+<!-- UK Number lookup -->
+    <% if((x >  439999999999 && x < 450000000000) || (x > 6999999999 & x< 8000000000)){ %>
+        <p>UK Number</p>
+        <%} if((x >  32999999999 && x < 34000000000) || (x > 599999999 & x < 600000000)){ %>
+        <p>France Number</p>
+
+            <% }else{ %> 
+<p><%= x %> </p>
+    
+                <% } %>
+
+
+
+
+    <% }) %>
+
+    
+
+<%- include ('footer.ejs') %> 
