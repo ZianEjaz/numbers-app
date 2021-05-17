@@ -1,22 +1,49 @@
-<%- include ('header.ejs') %> 
-
-<%  numbers.forEach(x =>{  %>
-<!-- UK Number lookup -->
-    <% if((x >  439999999999 && x < 450000000000) || (x > 6999999999 & x< 8000000000)){ %>
-        <p>UK Number</p>
-        <%} if((x >  32999999999 && x < 34000000000) || (x > 599999999 & x < 600000000)){ %>
-        <p>France Number</p>
-
-            <% }else{ %> 
-<p><%= x %> </p>
-    
-                <% } %>
+<% const ukNumbers = [] %> 
+<% const franceNumbers = [] %> 
+<% const italyNumbers = [] %> 
+<% const irelandNumbers = [] %>
+<% const randomNumbers = [] %> 
 
 
+<% numbers.forEach(x=>{ %>
+        <!-- UK Number lookup -->
+        <% if((x> 439999999999 && x < 450000000000) || (x> 6999999999 & x< 8000000000)){ %>
+        <% ukNumbers.push(x) %> 
+        <!-- france Number lookup -->
+        <%} else if((x> 32999999999 && x < 34000000000) || (x> 599999999 & x < 700000000)){ %>
+        <% franceNumbers.push(x) %> 
+        <!-- Italy Number lookup -->
+        <%} else if((x> 389999999999 && x < 400000000000) || (x> 2999999999 & x < 4000000000)){ %>
+        <% italyNumbers.push(x) %> 
+        <!-- ireland Number lookup -->
+        <%} else if((x> 352999999999 && x < 354000000000) || (x> 799999999 & x < 800000000)){ %>
+            <% irelandNumbers.push(x) %> 
+        <%} else{ %> 
+            <% randomNumbers.push(x) %>
+        <% } %>
 
 
-    <% }) %>
+     <% }) %>
 
-    
+     <% ukNumbers.forEach(number=>{ %> 
+        <%= number  %> </br>
+        
+        <% }) %>
+        <% franceNumbers.forEach(number=>{ %> 
+            <%= number  %> </br>
+            
+            <% }) %>
+            <% italyNumbers.forEach(number=>{ %> 
+                <%= number  %> </br>
+                
+                <% }) %>
+                <% irelandNumbers.forEach(number=>{ %> 
+                    <%= number  %> </br>
+                    
+                    <% }) %>
+                    <% randomNumbers.forEach(number=>{ %> 
+                        <%= number  %> </br>
+                        
+                        <% }) %>
 
-<%- include ('footer.ejs') %> 
+     
